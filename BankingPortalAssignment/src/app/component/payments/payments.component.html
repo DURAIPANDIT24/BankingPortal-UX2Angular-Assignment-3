@@ -1,0 +1,124 @@
+<div class="container-fluid bg-light">
+    <div class="row">
+        <div class="col-sm-6 col-lg-6">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:20px">
+
+
+                <a class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true"
+                    aria-expanded="false">
+                    <div class="media-body " style="font-size:25px;">
+                        Payment <span style="color: #328f8a;">Last week
+                        </span> </div>
+                </a>
+                <ul class="dropdown-menu " role="menu">
+                    <a class="dropdown-item">Weekly</a>
+                    <a class="dropdown-item">Monthly</a>
+                    <a class="dropdown-item">Yearly</a>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-sm-6 col-lg-2 d-none d-sm-block">
+            <div style="float:left;margin-right:20px;">
+                <label style="margin-top:10px">Income</label>
+                <h4 style="color:#328f8a ;font-size:  25px ; ">$ {{IncomeAmmonut|number}}</h4>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 d-none d-sm-block">
+            <div style="float:left;margin-right:20px;">
+                <label style="margin-top:10px">Outcome</label>
+                <h4 style="color:rgb(231, 8, 8) ;font-size:  25px ; ">$ {{OutcomeAmonut|number}}</h4>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 d-none d-sm-block ">
+            <div class="dropdown pmd-dropdown pmd-user-info ml-auto btn-group  " style="margin-top:20px">
+                <a class="btn-user dropdown-toggle  media align-items-center" data-toggle="dropdown" data-sidebar="true"
+                    aria-expanded="false">
+                    <div>
+                        Show analytics
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                    <a class="dropdown-item">Weekly</a>
+                    <a class="dropdown-item">Monthly</a>
+                    <a class="dropdown-item">Yearly</a>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid d-none d-sm-block" style="padding-top: 20px; padding-left: 25px;">
+    <div class="row">
+        <div class="col-md-1 col-sm-1" style="padding-top: 5px;">
+            All {{payments.length}}
+        </div>
+        <div class="col-md-1 col-sm-1 " style="padding-top: 5px;">
+            <span style="color:green">●</span> Income {{incomecount}}
+        </div>
+        <div class="col-md-1 col-sm-1 " style="padding-top: 5px;">
+            <span style="color:red">●</span> Outcome {{outcomecount}}
+        </div>
+        <div class="col-md-2 col-sm-2 " style="padding-top: 5px;">
+            <span style="color:green">●</span> For Signature
+        </div>
+        <div class="col-md-4 "></div>
+        <div class="col-md-3 ">
+            <div class="input-group">
+                <input class="form-control border-end-4 border searchTerm " type="text" [(ngModel)]="term"
+                    placeholder="Search">
+                <span class="input-group-append">
+                    <button class="btn btn-outline-secondary bg-white border-start-0 border  ms-n3" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid " style="padding-top: 20px; padding-left: 25px;">
+    Today, {{date}}
+</div>
+<div>
+    <div class="container  bg-light " *ngFor="let payment of payments| filter:term"
+        style="padding-top: 20px; padding-bottom: 20px;  border-radius: 3px; margin-bottom: 20px; ">
+        <div class="card bg-light">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                        <span style="font-size :18px; font-weight: bold;">{{payment.name}}</span>
+                        <br>
+                        <span class="d-none d-sm-block"> {{payment.description}}</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-2" *ngIf="payment.Amount &lt; 0">
+                        <span style="color: red">$ {{payment.Amount}}</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-2" *ngIf="payment.Amount &gt; 0">
+                        <span style="color: green">$ {{payment.Amount}}</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-2" *ngIf="payment.Category=='Income'">
+                        <span class="badge badge-success">{{payment.Category}}</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-2" *ngIf="payment.Category=='Outcome'">
+                        <span class="badge badge-danger">{{payment.Category}}</span>
+                    </div>
+                    <div class="col-sm-3 col-lg-2">
+
+                        <div class="dropdown pmd-dropdown pmd-user-info ml-auto btn-group">
+                            <a class="btn-user dropdown-toggle  media align-items-center" data-toggle="dropdown"
+                                data-sidebar="true" aria-expanded="false">
+                                <div>
+                                    more
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                                <a class="dropdown-item">History</a>
+                                <a class="dropdown-item">Details</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

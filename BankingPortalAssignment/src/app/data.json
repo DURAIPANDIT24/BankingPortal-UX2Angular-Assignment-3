@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "name": "Wonder Pizza Guys",
+    "description": "Payment ar the pizzeria ",
+    "Category": "Outcome",
+    "Amount": -859,
+    "TransactionType": "credit"
+  },
+  {
+    "Id": 2,
+    "name": "Another Company inc.",
+    "description": "Warehouse rental for may",
+    "Category": "Income",
+    "Amount": 900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 3,
+    "name": "Global Little Things LLS",
+    "description": "withdrawal of personal funds",
+    "Category": "Outcome",
+    "Amount": -900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 1,
+    "name": "Wonder Pizza Guys",
+    "description": "Payment ar the pizzeria ",
+    "Category": "Outcome",
+    "Amount": -859,
+    "TransactionType": "credit"
+  },
+  {
+    "Id": 2,
+    "name": "Another Company inc.",
+    "description": "Warehouse rental for may",
+    "Category": "Income",
+    "Amount": 900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 3,
+    "name": "Global Little Things LLS",
+    "description": "withdrawal of personal funds",
+    "Category": "Outcome",
+    "Amount": -900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 1,
+    "name": "Wonder Pizza Guys",
+    "description": "Payment ar the pizzeria ",
+    "Category": "Outcome",
+    "Amount": -859,
+    "TransactionType": "credit"
+  },
+  {
+    "Id": 2,
+    "name": "Another Company inc.",
+    "description": "Warehouse rental for may",
+    "Category": "Income",
+    "Amount": 900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 3,
+    "name": "Global Little Things LLS",
+    "description": "withdrawal of personal funds",
+    "Category": "Outcome",
+    "Amount": -900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 1,
+    "name": "Wonder Pizza Guys",
+    "description": "Payment ar the pizzeria ",
+    "Category": "Outcome",
+    "Amount": -859,
+    "TransactionType": "credit"
+  },
+  {
+    "Id": 2,
+    "name": "Another Company inc.",
+    "description": "Warehouse rental for may",
+    "Category": "Income",
+    "Amount": 900,
+    "TransactionType": "Debit"
+  },
+  {
+    "Id": 3,
+    "name": "Global Little Things LLS",
+    "description": "withdrawal of personal funds",
+    "Category": "Outcome",
+    "Amount": -900,
+    "TransactionType": "Debit"
+  }
+]
