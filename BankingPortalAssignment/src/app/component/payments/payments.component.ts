@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { payment } from 'src/app/models/payment';
+import { ServicesService } from 'src/app/service/services.service';
 import *  as  data from '../../data.json';
 
 @Component({
@@ -14,9 +16,9 @@ export class PaymentsComponent implements OnInit {
   outcomecount: number | any;
   term: string | any;
   pay: any;
-  payments: any = (data as any).default;
+  payments: payment[] | any;
   date: Date | any = new Date().toLocaleString("default", { weekday: "long" });
-  constructor() { }
+  constructor(private service: ServicesService) { }
 
   ngOnInit(): void {
     console.log(this.payments)
@@ -24,24 +26,29 @@ export class PaymentsComponent implements OnInit {
     var outcomecalculate = 0;
     var countOutcome = 0;
     var countincome = 0;
-    for (let i = 0; i < this.payments.length; i++) {
+    this.service.getPaymentDetails().subscribe((data) => {
+      console.log(data)
+      this.payments = data;
+      for (let i = 0; i < this.payments.length; i++) {
 
-      if (this.payments[i].Category == "Income") {
-        countincome = countincome + 1
-        incomecalculate = incomecalculate + this.payments[i].Amount;
+        if (this.payments[i].Category == "Income") {
+          countincome = countincome + 1
+          incomecalculate = incomecalculate + this.payments[i].Amount;
 
 
 
+        }
+        if (this.payments[i].Category == "Outcome") {
+          outcomecalculate = outcomecalculate - this.payments[i].Amount;
+          countOutcome = countOutcome + 1;
+        }
+        this.outcomecount = countOutcome;
+        this.incomecount = countincome;
+        this.IncomeAmmonut = incomecalculate;
+        this.OutcomeAmonut = outcomecalculate;
       }
-      if (this.payments[i].Category == "Outcome") {
-        outcomecalculate = outcomecalculate - this.payments[i].Amount;
-        countOutcome = countOutcome + 1;
-      }
-      this.outcomecount = countOutcome;
-      this.incomecount = countincome;
-      this.IncomeAmmonut = incomecalculate;
-      this.OutcomeAmonut = outcomecalculate;
-    }
+    })
+
 
 
   }

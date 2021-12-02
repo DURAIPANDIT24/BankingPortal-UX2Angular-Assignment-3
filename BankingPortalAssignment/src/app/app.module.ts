@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './component/header/header.component';
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     Ng2SearchPipeModule,
     FormsModule,
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
